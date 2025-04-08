@@ -80,8 +80,7 @@ defmodule NervesKey.PKCS11 do
     }
   end
 
-  defp process_option({:i2c, bus_number}, acc) when bus_number >= 0 and bus_number <= 16,
-    do: acc + bus_number
+  defp process_option({:i2c, bus_number}, acc), do: acc + bus_number
 
   defp process_option({:type, :nerves_key}, acc), do: acc
   defp process_option({:type, :trust_and_go}, acc), do: acc + 16
